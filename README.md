@@ -30,6 +30,9 @@ The steps given here assume you have Git, Ruby, Bundler, and SQLite3 installed. 
   github:
     # Create an access token at https://github.com/settings/applications
     access_token: accesstokenfromgithub
+  gist_notifier:
+    # Whether to always use the Gist ID in the subject line.
+    always_use_id: false
   mail:
     # These options mimic Pony's mail options.
     # See https://github.com/benprew/pony#transport

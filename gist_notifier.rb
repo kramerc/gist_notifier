@@ -29,6 +29,13 @@ config = YAML.load(File.read(config_file))
 # Symbolize the keys in the config hash.
 symbolize_keys(config)
 
+# Default configuration
+config = {
+  gist_notifier: {
+    always_use_id: false
+  }
+}.merge(config)
+
 # Flag for determining whether to send email notifications on first run with
 # this database.
 fresh_database = false
@@ -82,9 +89,11 @@ loop do # Keep looping until we run out of pages.
 
         # Determine the appropriate display name for the Gist.
         gist_name = "gist:#{gist.id}"
-        gist_first_filename = gist.files.fields.first.to_s
-        unless gist_first_filename.start_with?('gistfile')
-          gist_name = gist_first_filename
+        unless config[:gist_notifier][:always_use_id]
+          gist_first_filename = gist.files.fields.first.to_s
+          unless gist_first_filename.start_with?('gistfile')
+            gist_name = gist_first_filename
+          end
         end
 
         html_body = <<-EOF
