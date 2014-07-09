@@ -91,7 +91,7 @@ loop do # Keep looping until we run out of pages.
           #{ActionView::Base.new.simple_format(comment.body)}
           <p style="font-size:small;-webkit-text-size-adjust:none;color:#666;">
             &mdash;<br>Reply to this on
-            <a href='https://gist.github.com/#{gist.user.login}/#{gist.id}#comment-#{comment.id}'>GitHub Gist</a>.<br>
+            <a href='https://gist.github.com/#{gist.owner.login}/#{gist.id}#comment-#{comment.id}'>GitHub Gist</a>.<br>
             This was sent by
             <a href="https://github.com/kramerc/gist_notifier">Gist Notifier</a>
             from host #{Socket.gethostname}. This is not an official GitHub email.
