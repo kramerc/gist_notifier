@@ -19,7 +19,7 @@ The steps given here assume you have Git, Ruby, Bundler, and SQLite3 installed. 
   git clone git://github.com/kramerc/gist_notifier.git
   ```
 
-2. Create an access token at https://github.com/settings/applications
+2. Create an access token at https://github.com/settings/tokens
 
 3. Create `gist_notifier.yml` with the following template and configure your access token and email settings. It is possible to have multiple configuration by passing a path as an argument to the Ruby script.
 
@@ -28,7 +28,7 @@ The steps given here assume you have Git, Ruby, Bundler, and SQLite3 installed. 
     # Database for caching comment IDs so duplicate notifications aren't sent.
     file: gist_notifier.db
   github:
-    # Create an access token at https://github.com/settings/applications
+    # Create an access token at https://github.com/settings/tokens
     access_token: accesstokenfromgithub
   gist_notifier:
     # Whether to always use the Gist ID in the subject line.
