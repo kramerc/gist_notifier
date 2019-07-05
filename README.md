@@ -1,5 +1,7 @@
 # Gist Notifier
 
+**No longer maintained:** GitHub now officially supports [gist notifications since May 8, 2019](https://github.blog/changelog/2019-05-08-gist-notifications/).
+
 An interim notifier that sends emails about new comments left on your own gists on [GitHub Gist](https://gist.github.com/).
 
 ## Why?
